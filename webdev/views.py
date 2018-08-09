@@ -7,6 +7,7 @@ import json
 from .models import Question,Choice
 from django.urls import reverse
 from django.db.models import F
+from django.utils import timezone
 from django.views import generic
 # Create your views here.
 
@@ -77,11 +78,16 @@ class IndexView(generic.ListView):
     template_name='webdev/index.html'
     context_object_name='latest_question_list'
     def get_queryset(self):
-        return Question.objects.order_by('-pub_date')[:5]
+        # 第一版
+        # return Question.objects.order_by('-pub_date')[:5]
+        # 第二版 需要显示比当前时间小的问题  用到函数__lte 返回小于等于当前时间的
+        return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
 
 class DetailView(generic.DetailView):
     model=Question
     template_name='webdev/detail.html'
+    def get_queryset(self):
+        return Question.objects.filter(pub_date__lte=timezone.now())
 
 class ResultsView(generic.DetailView):
     model=Question
