@@ -1,0 +1,17 @@
+安装python
+
+安装apache 
+  修改httpd.conf配置
+	安装mod_wsgi 对应的python，Apache版本
+	下载mod_wsgi.whl
+	pip install weel
+	pip install mod_wsgi.whl
+	mod_wsgi-express module-config 将输出信息添加到httpd.conf
+
+配置项目路径
+
+接下来。。。
+
+启动
+
+success！

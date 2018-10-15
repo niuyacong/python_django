@@ -36,9 +36,13 @@ def login(request):
         # 直接返回数据
         # return HttpResponse(username) 122
         result={}
-        result['username']=username
-        result=json.dumps(result)
-        return HttpResponse(result,content_type="application/json;charset=utf-8")
+        result["username"]=username+"123"
+        results={}
+        result1=[]
+        result1.append(result)
+        results["data"]=result1
+        results=json.dumps(results)
+        return HttpResponse(results,content_type="application/json;charset=utf-8")
         # {"username": "122"}
 
 

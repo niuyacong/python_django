@@ -1,6 +1,809 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<!-- saved from url=(0102)http://act.foodszs.cn/vote/103.html?unid=o8i_3sqx_knbqSWNbLao4y4-5y-g&state=14379762&scope=snsapi_base -->
+<html style="font-size: 133.333px;"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <link rel="stylesheet" type="text/css" href="http://misc.foodszs.cn/activity/vote/vote/dadanpin/css/best.css">
+    <link rel="stylesheet" href="http://misc.foodszs.cn/httoutiao/app/article/css/ani.css">
+    <link rel="stylesheet" href="http://misc.foodszs.cn/activity/vote/vote/dadanpin/css/super.css">
+
+    <title>2018'中国酱酒领导峰会暨大国酱香颁奖盛典榜单评选</title>
+    <script src="http://static.foodszs.cn/public/scripts/jquery-1.11.1.min.js"></script>
+    <script src="http://static.foodszs.cn/public/scripts/jquery.lazyload.js"></script>
+    <script src="http://misc.foodszs.cn/public/layerv3/layer-v3.1.1/layer-v3.1.1/layer/layer.js"></script><link rel="stylesheet" href="http://misc.foodszs.cn/public/layerv3/layer-v3.1.1/layer-v3.1.1/layer/theme/default/layer.css?v=3.1.1" id="layuicss-layer">
+
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="/scripts/vote/vote_helper.js?t=114811"></script>
+    <script type="text/javascript">
+        //分享
+        wx.config({
+            debug: false,
+            appId: 'wx4b57c0a8fa27a029',
+            timestamp: '1539310898',
+            nonceStr: '0D0FD7C6E093F7B804FA0150B875B868',
+            signature: '41170f5ff6745bce4613751c70265f6097cb89dd',
+            jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
+        });
+        var wx_title ='大国酱香榜单评选火热进行中，看谁将领航酱酒风潮！';
+        var wx_link ='http://act.foodszs.cn/vote/103.html?tid=237219&pid=0&fid=';
+        var wx_img ='http://misc.foodszs.cn/activity/vote/vote/jiangjiu/jj_share.jpg';
+        var wx_desc='酱酒热潮已来临，特此举行大国酱香榜单评选活动，点击链接，为你支持的酱酒品牌投出宝贵一票！';
+
+
+        wx.ready(function () {
+
+            wx.onMenuShareTimeline({
+                title: wx_title,
+                link: wx_link,
+                //imgUrl: "http://act.foodszs.cn",
+                imgUrl: wx_img,
+                desc: wx_desc, // 分享描述
+                success: function (res) {
+                    jQuery.post("/wine/RepostLog", { unid: "o8i_3sqx_knbqSWNbLao4y4-5y-g", id: "" }, function (d) {
+                        $(".share").hide();
+                        //$(".add1").show().delay(1500).fadeOut("fast");
+
+                    })
+                },
+                cancel: function (res) {
+                    alert("分享失败...");
+                },
+                fail: function (res) {
+                    alert(JSON.stringify(res));
+                }
+            });
+            wx.onMenuShareAppMessage({
+                title: wx_title,
+                link: wx_link,
+                //imgUrl: "http://act.foodszs.cn",
+                imgUrl: wx_img,
+                desc: wx_desc, // 分享描述
+                success: function (res) {
+                    jQuery.post("/wine/RepostLog", { unid: "o8i_3sqx_knbqSWNbLao4y4-5y-g", id: "" }, function (d) {
+                        $(".share").hide();
+                    })
+                },
+                cancel: function () {
+                },
+                fail: function (res) {
+                    alert(JSON.stringify(res));
+                }
+            })
+        });
+        function tan_share(){
+            var sortid=$("#tan_sort").html();
+            wx_link="http://act.foodszs.cn/votenew/46.html?tanoption_id="+sortid;
+        }
+    </script>
+    <script>
+        //字体大小
+        (function (w, d) {
+
+            function rem() {
+                d.getElementsByTagName('html')[0].style.fontSize = Math.min(d.documentElement.getBoundingClientRect().width, 500) * 100 / 375 + 'px';
+            }
+            rem();
+            w.onresize = rem;
+        })(window, document);
+
+        //
+        $(function(){
+            if(""!=""&&""!=0){
+                tanchu("");
+            }
+        })
+
+    </script>
+
+<link rel="stylesheet" href="http://misc.foodszs.cn/activity/vote/jstoup929/jstoup.css?b=4">
+<style>
+.layui-layer-btn- a{ font-size:15px!important;}
+.layui-layer-content{
+    width: 80%!important;
+    display: flex;
+    justify-content: space-between;
+}
+.layui-layer-content input{  width:100px!important; margin-right:2%!important;}
+.layui-layer-prompt{ left:10%!important;right:10%!important; margin:0 auto!important;}
+#layui-layer-rim{left:10%!important;right:10%!important; margin:0 auto!important;}
+.layui-layer-content{font-size:60px;}
+</style>
+
+</head>
+
 <body>
-    <form action="login" method="POST">
-        <h1>用户名：</h1><input value="" name="username"/>
-        <button type="submit" >提交</button>
-    </form>
-</body>
+    <div class="main">
+        <section>
+            <img src="http://misc.foodszs.cn/activity/vote/jstoup929/jiangjiu.jpg?v=3" class="index_img">
+        </section>
+        <section>
+            <ul class="audition_top_list">
+                <li>
+                    参与产品
+                    <p>31</p>
+                </li>
+                <li>
+                    累计票数
+                    <p>5621201</p>
+                </li>
+                <li>
+                    访问量
+                    <p>5701884</p>
+                </li>
+            </ul>
+        </section>
+        <!-- <div class="audition_djs">
+            <div class="audition_time">
+                <div class="audition_time_one">
+                    <p><span>距结束还剩</span></p>
+                </div>
+                <div id="content">
+                    <div class="contentBox clearfix">
+                        <div id="day" class="math">
+                            <div id="day-1" class="math-1"></div>
+                            <div id="day-2" class="math-1"></div>
+                            <div id="day-3" class="math-1"></div>
+                        </div>
+                        <div class="text">天</div>
+
+                        <div id="hour" class="math">
+                            <div id="hour-1" class="math-1"></div>
+                            <div id="hour-2" class="math-1"></div>
+                        </div>
+                        <div class="text">时</div>
+
+                        <div id="min" class="math">
+                            <div id="min-1" class="math-1"></div>
+                            <div id="min-2" class="math-1"></div>
+                        </div>
+                        <div class="text">分</div>
+
+                        <div id="sec" class="math">
+                            <div id="sec-1" class="math-1"></div>
+                            <div id="sec-2" class="math-1"></div>
+                        </div>
+                        <div class="text">秒</div>
+                    </div>
+                </div>
+            </div>
+            <div class="audition_bm">
+                <a href="">我要报名</a>
+            </div>
+        </div> -->
+        <!--标题-->
+        <div class="vote_title" style="display:none">
+            <h2>2018’中国酱酒领导峰会暨大国酱香颁奖盛典榜单评选</h2>
+        </div>
+        <!--时间介绍搜索-->
+        <div class="audition_two">
+            <ul>
+                <li class="audition_two_time">
+                    <img src="./1_files/time.png" class="fl icon">
+                    <span class="fl">评选价值：</span>
+                    <p> 1、第二轮酱酒已经形成热潮，再次出现发展风口和拐点现象，发展酱酒已经成为酒业主流。</p>
+                    <p> 2、探索酱香白酒前后十年剧变，厘清第二轮酱酒发展逻辑，明晰发展趋势，营造更好的酱酒发展氛围，推动酱香名优白酒乘势而上，进入快通道。</p>
+                    <p> 3、大力肯定和表彰主流酱酒企业和品牌的阶段发展成果， 共享发展经验。</p>          
+                </li>
+                <li class="audition_two_time">
+                    <img src="./1_files/time.png" class="fl icon">
+                    <span class="fl">活动时间、地点：</span>
+                    <p>10月23日14:30-17:00</p>
+                    <p>长沙市中建万怡酒店</p>
+                </li>
+                <li class="audition_two_time">
+                    <img src="./1_files/time.png" class="fl icon">
+                    <span class="fl">主办机构：</span>
+                    <p>华糖云商   北京正一堂战略咨询机构</p>
+                </li>
+                <li class="audition_two_time">
+                    <img src="./1_files/time.png" class="fl icon">
+                    <span class="fl">投票时间：</span>
+                    <p>2018年10月2日——10月22日</p>
+                </li>
+                <li class="audition_two_time">
+                    <img src="./1_files/rule.png" class="fl icon">
+                    <span class="fl">投票规则：</span>
+                    <p>每人每天有5次投票机会，每个产品最多可投5票/每天</p>
+                </li>
+                <li class="audition_introduce">
+                    <img src="./1_files/introduce.png" class="fl icon">
+                    <div class="introduce_click">
+                        <span class="fl">投票须知：</span>
+                        <p>投票结果将作为各奖项评选的重要依据。最终榜单将于10月23日下午，在长沙中建万怡酒店由2018’中国酱酒领导峰会暨大国酱香颁奖盛典现场发布。</p>
+                        <p>本活动最终解释权归主办方所有</p>
+                        <p class="audition_jt">
+                            <img src="./1_files/jianxia.png" class="xia">
+                            <img src="./1_files/jianshang.png" class="shang">
+                        </p>
+                    </div>
+
+                    <div class="introduce">
+
+                    </div>
+                </li>
+                <li class="audition_search clearfix">
+                    <div class="audition_search1">
+                        <img src="./1_files/search.png" class="fl icon">
+                        <span>搜索产品</span>
+                    </div>
+                    <div class="view_rank">
+                        <a href="http://act.foodszs.cn/vote/orderpage?id=103">查看排名</a>
+			<input type="hidden" id="yzm" name="yzm" value="">
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--查看排名-->
+        <div class="view_rank">
+            <a href="http://act.foodszs.cn/vote/103.html?unid=o8i_3sqx_knbqSWNbLao4y4-5y-g&amp;state=14379762&amp;scope=snsapi_base">查看排名</a>
+        </div>
+
+        <!--投票列表-->
+ <div class="audition_vote">
+            <!--分类-->
+                        <div class="audition_vote1">
+                                <div class="vote_fl" style="background:#fff;font-size:19px;line-height:37px;color:#6d8aad;">
+                    <div style="display:block;text-align:center;">大国酱香•领导领军品牌</div>
+                    <p class="audition_jt" style="top:0.17rem;">
+                        <img src="http://v.foodszs.com/htact//small/20180929111607271693.png" class="xia" style="display: none;">
+                        <img src="http://v.foodszs.com/htact//small/20180929111607271693.png" class="shang" style="display: block;">
+            <input id="vot_173" type="hidden" value="0">
+                    </p>
+                </div>
+                <div class="vote_list1">
+                    <ul class="vote_list clearfix">
+
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>1</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1891&#39;,&#39;贵州茅台酒&#39;,&#39;/small/20180929111607271693.png&#39;,&#39;36629&#39;,&#39;1&#39;,&#39;173&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx1" voteid="1891" sort="1" nums="36629" title="贵州茅台酒" pic="/small/20180929111607271693.png" rowid="173" memo1="" memo2="" style="height: 260px;">
+                                        <img src="http://v.foodszs.com/htact//small/20180929111607271693.png" data-original="http://v.foodszs.com/htact//small/20180929111607271693.png" class="lazy" style="display: block;">
+                                        <p class="vote_name">贵州茅台酒</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1891">36629</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1891,173,$(this))" id="vote1891">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>4</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1892&#39;,&#39;郎酒（青花郎）&#39;,&#39;/small/20180929111641019548.png&#39;,&#39;40369&#39;,&#39;4&#39;,&#39;173&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx4" voteid="1892" sort="4" nums="40369" title="郎酒（青花郎）" pic="/small/20180929111641019548.png" rowid="173" memo1="" memo2="" style="height: 260px;">
+                                        <img src="http://v.foodszs.com/htact//small/20180929111607271693.png" data-original="http://v.foodszs.com/htact//small/20180929111641019548.png" class="lazy" style="display: block;">
+                                        <p class="vote_name">郎酒（青花郎）</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1892">40369</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1892,173,$(this))" id="vote1892">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>8</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1895&#39;,&#39;习酒（窖藏1988）&#39;,&#39;/small/20180929111711460607.png&#39;,&#39;142812&#39;,&#39;8&#39;,&#39;173&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx8" voteid="1895" sort="8" nums="142812" title="习酒（窖藏1988）" pic="/small/20180929111711460607.png" rowid="173" memo1="" memo2="" style="height: 260px;">
+                                        <img src="http://v.foodszs.com/htact//small/20180929111607271693.png" data-original="http://v.foodszs.com/htact//small/20180929111711460607.png" class="lazy">
+                                        <p class="vote_name">习酒（窖藏1988）</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1895">142812</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1895,173,$(this))" id="vote1895">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>10</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1896&#39;,&#39;茅台王子酒&#39;,&#39;/small/20180929111733483681.png&#39;,&#39;8468&#39;,&#39;10&#39;,&#39;173&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx10" voteid="1896" sort="10" nums="8468" title="茅台王子酒" pic="/small/20180929111733483681.png" rowid="173" memo1="" memo2="" style="height: 260px;">
+                                        <img src="http://v.foodszs.com/htact//small/20180929111607271693.png" data-original="http://v.foodszs.com/htact//small/20180929111733483681.png" class="lazy">
+                                        <p class="vote_name">茅台王子酒</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1896">8468</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1896,173,$(this))" id="vote1896">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>12</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1897&#39;,&#39;国台&#39;,&#39;/small/20180929111757761691.png&#39;,&#39;471722&#39;,&#39;12&#39;,&#39;173&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx12" voteid="1897" sort="12" nums="471722" title="国台" pic="/small/20180929111757761691.png" rowid="173" memo1="" memo2="" style="height: 260px;">
+                                        <img src="http://v.foodszs.com/htact//small/20180929111607271693.png" data-original="http://v.foodszs.com/htact//small/20180929111757761691.png" class="lazy">
+                                        <p class="vote_name">国台</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1897">471722</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(1,1897,173,$(this))" id="vote1897">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>18</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1898&#39;,&#39;珍酒（珍15）&#39;,&#39;/small/20180929111833171681.png&#39;,&#39;20670&#39;,&#39;18&#39;,&#39;173&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx18" voteid="1898" sort="18" nums="20670" title="珍酒（珍15）" pic="/small/20180929111833171681.png" rowid="173" memo1="" memo2="" style="height: 260px;">
+                                        <img src="http://v.foodszs.com/htact//small/20180929111607271693.png" data-original="http://v.foodszs.com/htact//small/20180929111833171681.png" class="lazy">
+                                        <p class="vote_name">珍酒（珍15）</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1898">20670</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1898,173,$(this))" id="vote1898">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>22</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1899&#39;,&#39;云门酱酒&#39;,&#39;/small/20180929112018915799.png&#39;,&#39;234594&#39;,&#39;22&#39;,&#39;173&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx22" voteid="1899" sort="22" nums="234594" title="云门酱酒" pic="/small/20180929112018915799.png" rowid="173" memo1="" memo2="" style="height: 260px;">
+                                        <img src="./1_files/jiazai.png" data-original="http://v.foodszs.com/htact//small/20180929112018915799.png" class="lazy">
+                                        <p class="vote_name">云门酱酒</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1899">234594</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1899,173,$(this))" id="vote1899">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>25</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1900&#39;,&#39;武陵&#39;,&#39;/small/20180929112041587226.png&#39;,&#39;2061&#39;,&#39;25&#39;,&#39;173&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx25" voteid="1900" sort="25" nums="2061" title="武陵" pic="/small/20180929112041587226.png" rowid="173" memo1="" memo2="" style="height: 260px;">
+                                        <img src="./1_files/jiazai.png" data-original="http://v.foodszs.com/htact//small/20180929112041587226.png" class="lazy">
+                                        <p class="vote_name">武陵</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1900">2061</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1900,173,$(this))" id="vote1900">投票</button></p>
+                                </div>
+                        </li>
+                                            </ul>
+                    <!-- <p class="more">查看更多</p> -->
+                </div>
+                            </div>
+                        <div class="audition_vote1">
+                                <div class="vote_fl" style="background:#fff;font-size:19px;line-height:37px;color:#6d8aad;">
+                    <div style="display:block;text-align:center;">大国酱香•标杆主力品牌</div>
+                    <p class="audition_jt" style="top:0.17rem;">
+                        <img src="./1_files/jianxia.png" class="xia">
+                        <img src="./1_files/jianshang.png" class="shang">
+            <input id="vot_174" type="hidden" value="0">
+                    </p>
+                </div>
+                <div class="vote_list1">
+                    <ul class="vote_list clearfix">
+
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>36</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1901&#39;,&#39;金沙回沙酒&#39;,&#39;/small/20180929112209747675.png&#39;,&#39;42220&#39;,&#39;36&#39;,&#39;174&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx36" voteid="1901" sort="36" nums="42220" title="金沙回沙酒" pic="/small/20180929112209747675.png" rowid="174" memo1="" memo2="" style="height: 260px;">
+                                        <img src="./1_files/jiazai.png" data-original="http://v.foodszs.com/htact//small/20180929112209747675.png" class="lazy">
+                                        <p class="vote_name">金沙回沙酒</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1901">42220</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1901,174,$(this))" id="vote1901">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>37</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1916&#39;,&#39;潭酒&#39;,&#39;/small/20180930093018165444.png&#39;,&#39;3841&#39;,&#39;37&#39;,&#39;174&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx37" voteid="1916" sort="37" nums="3841" title="潭酒" pic="/small/20180930093018165444.png" rowid="174" memo1="" memo2="" style="height: 260px;">
+                                        <img src="./1_files/jiazai.png" data-original="http://v.foodszs.com/htact//small/20180930093018165444.png" class="lazy">
+                                        <p class="vote_name">潭酒</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1916">3841</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1916,174,$(this))" id="vote1916">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>38</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1922&#39;,&#39;赖茅&#39;,&#39;/small/2018101108474317828.png&#39;,&#39;4906&#39;,&#39;38&#39;,&#39;174&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx38" voteid="1922" sort="38" nums="4906" title="赖茅" pic="/small/2018101108474317828.png" rowid="174" memo1="" memo2="" style="height: 260px;">
+                                        <img src="./1_files/jiazai.png" data-original="http://v.foodszs.com/htact//small/2018101108474317828.png" class="lazy">
+                                        <p class="vote_name">赖茅</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1922">4906</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1922,174,$(this))" id="vote1922">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>42</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1903&#39;,&#39;茅台醇&#39;,&#39;/small/20180929112310642152.png&#39;,&#39;13137&#39;,&#39;42&#39;,&#39;174&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx42" voteid="1903" sort="42" nums="13137" title="茅台醇" pic="/small/20180929112310642152.png" rowid="174" memo1="" memo2="" style="height: 260px;">
+                                        <img src="./1_files/jiazai.png" data-original="http://v.foodszs.com/htact//small/20180929112310642152.png" class="lazy">
+                                        <p class="vote_name">茅台醇</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1903">13137</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1903,174,$(this))" id="vote1903">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>45</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1904&#39;,&#39;酒中酒（宋代官窖）&#39;,&#39;/small/20180929112330874428.png&#39;,&#39;1227815&#39;,&#39;45&#39;,&#39;174&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx45" voteid="1904" sort="45" nums="1227815" title="酒中酒（宋代官窖）" pic="/small/20180929112330874428.png" rowid="174" memo1="" memo2="" style="height: 260px;">
+                                        <img src="./1_files/jiazai.png" data-original="http://v.foodszs.com/htact//small/20180929112330874428.png" class="lazy">
+                                        <p class="vote_name">酒中酒（宋代官窖）</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1904">1227815</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(1,1904,174,$(this))" id="vote1904">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>47</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1905&#39;,&#39;丹泉酒&#39;,&#39;/small/20180930110602886906.png&#39;,&#39;6363&#39;,&#39;47&#39;,&#39;174&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx47" voteid="1905" sort="47" nums="6363" title="丹泉酒" pic="/small/20180930110602886906.png" rowid="174" memo1="" memo2="" style="height: 260px;">
+                                        <img src="./1_files/jiazai.png" data-original="http://v.foodszs.com/htact//small/20180930110602886906.png" class="lazy">
+                                        <p class="vote_name">丹泉酒</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1905">6363</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1905,174,$(this))" id="vote1905">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>48</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1906&#39;,&#39;国坛&#39;,&#39;/small/20180929112428015811.png&#39;,&#39;1674809&#39;,&#39;48&#39;,&#39;174&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx48" voteid="1906" sort="48" nums="1674809" title="国坛" pic="/small/20180929112428015811.png" rowid="174" memo1="" memo2="" style="height: 260px;">
+                                        <img src="./1_files/jiazai.png" data-original="http://v.foodszs.com/htact//small/20180929112428015811.png" class="lazy">
+                                        <p class="vote_name">国坛</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1906">1674809</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(1,1906,174,$(this))" id="vote1906">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>53</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1908&#39;,&#39;古贝春（古贝元）&#39;,&#39;/small/20180929112542225336.png&#39;,&#39;7970&#39;,&#39;53&#39;,&#39;174&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx53" voteid="1908" sort="53" nums="7970" title="古贝春（古贝元）" pic="/small/20180929112542225336.png" rowid="174" memo1="" memo2="" style="height: 260px;">
+                                        <img src="./1_files/jiazai.png" data-original="http://v.foodszs.com/htact//small/20180929112542225336.png" class="lazy">
+                                        <p class="vote_name">古贝春（古贝元）</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1908">7970</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1908,174,$(this))" id="vote1908">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>54</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1918&#39;,&#39;一锦坊&#39;,&#39;/small/20180930165130119415.png&#39;,&#39;1570216&#39;,&#39;54&#39;,&#39;174&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx54" voteid="1918" sort="54" nums="1570216" title="一锦坊" pic="/small/20180930165130119415.png" rowid="174" memo1="" memo2="" style="height: 260px;">
+                                        <img src="./1_files/jiazai.png" data-original="http://v.foodszs.com/htact//small/20180930165130119415.png" class="lazy">
+                                        <p class="vote_name">一锦坊</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1918">1570216</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(1,1918,174,$(this))" id="vote1918">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>55</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1921&#39;,&#39;贵酒&#39;,&#39;/small/20181010190445931289.png&#39;,&#39;1535&#39;,&#39;55&#39;,&#39;174&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx55" voteid="1921" sort="55" nums="1535" title="贵酒" pic="/small/20181010190445931289.png" rowid="174" memo1="" memo2="" style="height: 260px;">
+                                        <img src="./1_files/jiazai.png" data-original="http://v.foodszs.com/htact//small/20181010190445931289.png" class="lazy">
+                                        <p class="vote_name">贵酒</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1921">1535</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1921,174,$(this))" id="vote1921">投票</button></p>
+                                </div>
+                        </li>
+                                            </ul>
+                    <!-- <p class="more">查看更多</p> -->
+                </div>
+                            </div>
+                                <div class="vote_fl" style="background:#fff;font-size:19px;line-height:37px;color:#6d8aad;">
+                    <div style="display:block;text-align:center;">大国酱香•超级单品</div>
+                    <p class="audition_jt" style="top:0.17rem;">
+                        <img src="./1_files/jianxia.png" class="xia">
+                        <img src="./1_files/jianshang.png" class="shang">
+            <input id="vot_175" type="hidden" value="0">
+                    </p>
+                </div>
+                <div class="vote_list1">
+                    <ul class="vote_list clearfix">
+
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>60</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1909&#39;,&#39;汉酱&#39;,&#39;/small/20180929112622940973.png&#39;,&#39;6842&#39;,&#39;60&#39;,&#39;175&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx60" voteid="1909" sort="60" nums="6842" title="汉酱" pic="/small/20180929112622940973.png" rowid="175" memo1="" memo2="" style="height: 260px;">
+                                        <img src="./1_files/jiazai.png" data-original="http://v.foodszs.com/htact//small/20180929112622940973.png" class="lazy">
+                                        <p class="vote_name">汉酱</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1909">6842</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1909,175,$(this))" id="vote1909">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>66</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1911&#39;,&#39;茅台白金酒金坛&#39;,&#39;/small/20180929112710704140.png&#39;,&#39;6717&#39;,&#39;66&#39;,&#39;175&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx66" voteid="1911" sort="66" nums="6717" title="茅台白金酒金坛" pic="/small/20180929112710704140.png" rowid="175" memo1="" memo2="" style="height: 260px;">
+                                        <img src="./1_files/jiazai.png" data-original="http://v.foodszs.com/htact//small/20180929112710704140.png" class="lazy">
+                                        <p class="vote_name">茅台白金酒金坛</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1911">6717</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1911,175,$(this))" id="vote1911">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>67</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1917&#39;,&#39;天朝上品（贵人酒）&#39;,&#39;/small/20180930103237270480.png&#39;,&#39;5575&#39;,&#39;67&#39;,&#39;175&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx67" voteid="1917" sort="67" nums="5575" title="天朝上品（贵人酒）" pic="/small/20180930103237270480.png" rowid="175" memo1="" memo2="" style="height: 260px;">
+                                        <img src="./1_files/jiazai.png" data-original="http://v.foodszs.com/htact//small/20180930103237270480.png" class="lazy">
+                                        <p class="vote_name">天朝上品（贵人酒）</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1917">5575</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1917,175,$(this))" id="vote1917">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>68</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1912&#39;,&#39;大兴东酒&#39;,&#39;/small/2018092911272816729.png&#39;,&#39;31398&#39;,&#39;68&#39;,&#39;175&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx68" voteid="1912" sort="68" nums="31398" title="大兴东酒" pic="/small/2018092911272816729.png" rowid="175" memo1="" memo2="" style="height: 260px;">
+                                        <img src="./1_files/jiazai.png" data-original="http://v.foodszs.com/htact//small/2018092911272816729.png" class="lazy">
+                                        <p class="vote_name">大兴东酒</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1912">31398</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1912,175,$(this))" id="vote1912">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>72</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1914&#39;,&#39;钓鱼台京贵酒&#39;,&#39;/small/201809291128072267.png&#39;,&#39;2289&#39;,&#39;72&#39;,&#39;175&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx72" voteid="1914" sort="72" nums="2289" title="钓鱼台京贵酒" pic="/small/201809291128072267.png" rowid="175" memo1="" memo2="" style="height: 260px;">
+                                        <img src="./1_files/jiazai.png" data-original="http://v.foodszs.com/htact//small/201809291128072267.png" class="lazy">
+                                        <p class="vote_name">钓鱼台京贵酒</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1914">2289</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1914,175,$(this))" id="vote1914">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>74</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1915&#39;,&#39;小糊涂仙▪心悠然&#39;,&#39;/small/20180929112826478694.png&#39;,&#39;50810&#39;,&#39;74&#39;,&#39;175&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx74" voteid="1915" sort="74" nums="50810" title="小糊涂仙▪心悠然" pic="/small/20180929112826478694.png" rowid="175" memo1="" memo2="" style="height: 260px;">
+                                        <img src="./1_files/jiazai.png" data-original="http://v.foodszs.com/htact//small/20180929112826478694.png" class="lazy">
+                                        <p class="vote_name">小糊涂仙▪心悠然</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1915">50810</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1915,175,$(this))" id="vote1915">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>75</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1919&#39;,&#39;天朝上品精品酒&#39;,&#39;/small/20181006140822816556.png&#39;,&#39;4551&#39;,&#39;75&#39;,&#39;175&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx75" voteid="1919" sort="75" nums="4551" title="天朝上品精品酒" pic="/small/20181006140822816556.png" rowid="175" memo1="" memo2="" style="height: 260px;">
+                                        <img src="./1_files/jiazai.png" data-original="http://v.foodszs.com/htact//small/20181006140822816556.png" class="lazy">
+                                        <p class="vote_name">天朝上品精品酒</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1919">4551</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1919,175,$(this))" id="vote1919">投票</button></p>
+                                </div>
+                        </li>
+                                                <li>
+                            <div class="vote_list_div">
+                                <p class="vote_hao"><span>76</span></p>
+                                <div class="vote_tx" onclick="enterprise(&#39;1920&#39;,&#39;金酱（金典）&#39;,&#39;/small/20181010190033860197.png&#39;,&#39;1427&#39;,&#39;76&#39;,&#39;175&#39;,$(this),2,&#39;&#39;,&#39;&#39;)" id="votetx76" voteid="1920" sort="76" nums="1427" title="金酱（金典）" pic="/small/20181010190033860197.png" rowid="175" memo1="" memo2="" style="height: 260px;">
+                                        <img src="./1_files/jiazai.png" data-original="http://v.foodszs.com/htact//small/20181010190033860197.png" class="lazy">
+                                        <p class="vote_name">金酱（金典）</p>
+                                    </div>
+                                    <p class="vote_ps"><span id="refresh1_1920">1427</span>票</p>
+                                    <p class="vote_tp"><button type="button" onclick="tou(0,1920,175,$(this))" id="vote1920">投票</button></p>
+                                </div>
+                        </li>
+                                            </ul>
+                    <!-- <p class="more">查看更多</p> -->
+                </div>
+                            </div>
+                        <!--分类-->
+
+        </div>
+
+        <!--弹出块-->
+        <div class="black"></div>
+        <!--分享层-->
+        <p class="share_fixed"><img src="./1_files/share.png" class="index_img"></p>
+
+        <div class="vote_fixed animated">
+            <div class="vote1">
+                <p class="vote_hao"><span id="tan_sort">3</span></p>
+                <div>
+                    <img id="tan_pic">
+                    <p class="vote_name" id="tan_title"></p>
+                </div>
+                <p class="vote_ps"><span id="tan_nums">1486</span>票</p>
+                <p class="vote1_an clearfix">
+                    <button type="button" class="vote1_tj" id="votebtn">投票</button>
+                    <button type="button" class="vote1_share" onclick="tan_share()">分享</button>
+                </p>
+                <p class="close">
+                    <span></span>
+                    <img src="./1_files/close.png">
+                </p>
+            </div>
+        </div>
+        <!--搜索-->
+        <div class="search_fixed">
+            <div class="search">
+                <div class="clearfix search1">
+                    <input id="chooseCity" class="fl" type="text" placeholder="请输入产品名称">
+                    <button class="fl" type="button" onclick="search()"><img src="./1_files/search_bai.png"></button>
+                </div>
+                <div class="auto-screening auto-hidden" id="autoScreening"></div>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+   
+        //投票 layer.config({ extend: 'http://misc.foodszs.cn/public/scripts/layer_mobile/layer.ext.js'});
+        function tou(state,id,rowid,e){
+            if ('0' == '0') {
+                layer.open({
+                    content: '请使用微信投票！'
+                   , skin: 'msg'
+                   , time: 0.8
+                });
+                return;
+            }
+
+	 if(state==1){
+	
+		 layer.prompt({title: '请输入验证码', formType: 1}, function(text, index){
+        	 $('#yzm').val(text);
+		
+
+	 
+	
+        var val=$("#vot_"+rowid).val();
+      
+        var new_val=parseInt(val)+1;
+        $("#vot_"+rowid).val(new_val);
+            $('#vote'+id).attr('disabled',true);
+            $('#vote'+id).html('投票中...');
+            $('#votebtn').attr('disabled',true);
+            $('#votebtn').html('投票中...');
+
+            jQuery.post('/vote/vote', { optionid: id, unionid: "o8i_3sqx_knbqSWNbLao4y4-5y-g","itemid":rowid,"yzm":$("#yzm").val(),"sels":id+"," }, function (d) {
+        console.log(d);
+                if (d == "ok") {
+                    //alert("投票成功！");
+                    if(e!='1'){
+                        var ps=e.parent().siblings('.vote_ps').find('span').text();
+                        ps++;
+                        e.parent().siblings('.vote_ps').find('span').text(ps);
+                        $('#tan_nums').text(ps);
+                    }else{
+                        var ps=$('#tan_nums').text();
+                        ps++;
+                        $('#tan_nums').text(ps);
+                        $('#vote'+id).parent().siblings('.vote_ps').find('span').text(ps);
+                    }
+                    alert("投票成功");
+                    //window.location=window.location;
+                }
+                else if (d == "1") {
+                    alert("您今天已投够次数，请明天再来！");
+                  
+                }
+                else if (d == "2") {
+                    alert("请选择选项！");
+                }
+                else {
+                   alert("投票失败，请稍后重试");
+                }
+                $('#vote'+id).attr('disabled',false);
+                $('#vote'+id).html('投票');
+                $('#votebtn').attr('disabled',false);
+                $('#votebtn').html('投票');
+            });
+	    layer.close(index);
+         })
+	 
+	 $(".layui-layer-content").append("<img id='img' src='/vote/getyzm?t="+Math.random()+"' />");
+		 $(".layui-layer-content input").attr('type','text');
+	 }else{
+	 
+	 
+	 
+	
+        var val=$("#vot_"+rowid).val();
+      
+        var new_val=parseInt(val)+1;
+        $("#vot_"+rowid).val(new_val);
+            $('#vote'+id).attr('disabled',true);
+            $('#vote'+id).html('投票中...');
+            $('#votebtn').attr('disabled',true);
+            $('#votebtn').html('投票中...');
+
+            jQuery.post('/vote/vote', { optionid: id, unionid: "o8i_3sqx_knbqSWNbLao4y4-5y-g","itemid":rowid,"yzm":$("#yzm").val(),"sels":id+"," }, function (d) {
+        console.log(d);
+                if (d == "ok") {
+                    //alert("投票成功！");
+                    if(e!='1'){
+                        var ps=e.parent().siblings('.vote_ps').find('span').text();
+                        ps++;
+                        e.parent().siblings('.vote_ps').find('span').text(ps);
+                        $('#tan_nums').text(ps);
+                    }else{
+                        var ps=$('#tan_nums').text();
+                        ps++;
+                        $('#tan_nums').text(ps);
+                        $('#vote'+id).parent().siblings('.vote_ps').find('span').text(ps);
+                    }
+                   alert("投票成功！");
+                    //window.location=window.location;
+                }
+                else if (d == "1") {
+                    alert("您今天已投够次数，请明天再来！");
+                   
+                }
+                else if (d == "2") {
+                    alert("请选择选项！");
+                }
+                else {
+                    alert("投票失败，请稍后重试");
+                }
+                $('#vote'+id).attr('disabled',false);
+                $('#vote'+id).html('投票');
+                $('#votebtn').attr('disabled',false);
+                $('#votebtn').html('投票');
+            });
+	 }
+        }
+        //搜索
+        function search(){
+            var input_words=$("#chooseCity").val();
+            if(input_words==""){
+                layer.open({
+                    content: '请先输入名称或编号',skin: 'msg',time: 0.8  //0.8秒后自动关闭
+                });
+                return;
+            }
+            //拿到所有的内容
+            var str="1.贵州茅台酒,4.郎酒（青花郎）,8.习酒（窖藏1988）,10.茅台王子酒,12.国台,18.珍酒（珍15）,22.云门酱酒,25.武陵,36.金沙回沙酒,42.茅台醇,45.酒中酒（宋代官窖）,47.丹泉酒,48.国坛,53.古贝春（古贝元）,37.潭酒,54.一锦坊,55.贵酒,38.赖茅,60.汉酱,66.茅台白金酒金坛,68.大兴东酒,72.钓鱼台京贵酒,74.小糊涂仙▪心悠然,67.天朝上品（贵人酒）,75.天朝上品精品酒,76.金酱（金典）";
+            var arr=str.split(",");
+            var strNew="";//用来存放相似结果的字符串，稍后转化为数组操作
+            for(i=0;i<arr.length;i++){
+                var op=arr[i].toString().split('.');
+                if(input_words==op[0].toString()||input_words==op[1].toString()){
+                    tanchu(op[0].toString());
+                    return false;
+                }
+
+                if(op[1].toString().indexOf(input_words)>=0){
+                    strNew=strNew+op[0].toString()+"."+op[1].toString()+",";
+                }
+            }
+            if(strNew==""){
+                layer.open({
+                    content: '没有找到匹配的搜索结果',skin: 'msg',time: 0.8  //0.8秒后自动关闭
+                });
+                return false;
+            }
+            strNew=strNew.substring(0,strNew.length-1);
+            var arrNew=strNew.split(",");
+            var addArrWord ="";
+            for(j=0;j<arrNew.length;j++){
+                var opnew=String(arrNew[j]).split('.');
+                addArrWord += "<div class='auto-screening-prompt' onclick='tanchu("+opnew[0].toString()+")'>" + String(opnew[1]) + "</div>";
+
+            }
+            if(arrNew.length>0){
+                $("#autoScreening").empty().append(addArrWord);
+                $("#autoScreening").removeClass("auto-hidden");}
+
+
+            if(strNew!=""){
+                return false;
+            }
+
+
+
+            layer.open({
+                content: '没有找到匹配的搜索结果',skin: 'msg',time: 0.8  //0.8秒后自动关闭
+            });
+        }
+        function tanchu(vvid){
+            var sort = $('#votetx'+vvid).attr('sort');
+            var pic = $('#votetx'+vvid).attr('pic');
+            var nums = $('#votetx'+vvid).attr('nums');
+            var title = $('#votetx'+vvid).attr('title');
+            var voteid = $('#votetx'+vvid).attr('voteid');
+            var memo1= $('#votetx'+vvid).attr('memo1');
+            var memo2= $('#votetx'+vvid).attr('memo2');
+            var rowid = $('#votetx'+vvid).attr('rowid');
+            var e = $('#votetx'+vvid);
+            enterprise(voteid, title, pic,nums, sort,rowid,e,2,memo1,memo2);
+
+        }
+    </script>
+
+
+
+
+</body></html>
